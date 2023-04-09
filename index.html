@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir = "ltr">
+    <head>
+      <meta charset="utf-8">
+      <title>The Turing Café</title>
+      <script src="index.js"></script>
+    </head>
+    <body onload="setTagline(); initializeFryer(); initializeGrill(); initializeMixer();
+                  updateBurgerStatus(); updateFryStatus(); updateMilkshakeStatus();
+                  displayNextMessage();">
+        <h1>The Turing Café</h1>
+        <h4 id="tagline"></h4>
+        <div id="current-message"></div><br>
+        <!-- button onclick="displayNextMessage()" style="margin-bottom:32px;">Next</button -->
+        <div class="row">
+            <div class="column" style="width:350px; float:left;" id="column1">
+                <div class="row" style="column-width:130px">
+                    <div id="grill-status"></div>
+                    <button onclick="toggleGrill(); updateGrill();" style="margin-bottom:16px;">Toggle Grill</button>
+                </div>
+                <div class="row" style="column-width:130px">
+                    <div id="fryer-status"></div>
+                    <button onclick="toggleFryer(); updateFryer();" style="margin-bottom:16px;">Toggle Fryer</button>
+                </div>
+                <div class="row" style="column-width:130px">
+                    <div id="mixer-status"></div>
+                    <button onclick="toggleMixer(); updateMixer();">Toggle Mixer</button>
+                </div>
+            </div>
+            <div class="column" style="width:300px; float: left;" id="column2">
+                <div class="row" style="white-space: nowrap; text-align: center; 
+                                        display: inline-block;">
+                    <div id="number-of-burgers" style="white-space: nowrap; text-align: center; 
+                    display: inline-block; padding-right:10px"></div>
+                    <div id="burger-timer" style="white-space: nowrap; text-align: center; 
+                    display: inline-block;"></div>
+                    <button onclick="displayBurgerTimer(); updateBurgerStatus();" 
+                    style="margin-bottom:16px; margin-left:auto; margin-right:0" id="burger-button"></button>
+                </div>
+                <div class="row" style="white-space: nowrap; text-align: center; 
+                                        display: inline-block;">
+                    <div id="number-of-fries" style="white-space: nowrap; text-align: center; 
+                    display: inline-block; padding-right:10px"></div>
+                    <div id="fry-timer" style="white-space: nowrap; text-align: center; 
+                    display: inline-block;"></div>
+                    <button onclick="displayFryTimer(); updateFryStatus();" 
+                    style="margin-bottom:16px; margin-left:auto; margin-right:0" id="fry-button"></button>
+                </div>
+                <div class="row" style="white-space: nowrap; text-align: center; 
+                                        display: inline-block;">
+                    <div id="number-of-milkshakes" style="white-space: nowrap; text-align: center; 
+                    display: inline-block; padding-right:10px"></div>
+                    <div id="milkshake-timer" style="white-space: nowrap; text-align: center; 
+                    display: inline-block;"></div>
+                    <button onclick="displayMilkshakeTimer(); updateMilkshakeStatus();" 
+                    style="margin-bottom:16px; margin-left:auto; margin-right:0" id="milkshake-button"></button>
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br><br><button onclick="checkAgainstOrder();" style="margin-bottom:16px; margin-left:350px;">Verify Order</button>
+        <div class="row" id="error-message"></div>
+    </body>
+</html>
